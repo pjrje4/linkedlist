@@ -1,24 +1,23 @@
-#ifndef MEDIA_H
-#define MEDIA_H
-#include <cstring>
+#include <iostream>
+#include "student.h"
 
 #if 0
 Justin Iness
-12/5/2021
+1/16/2022
 C++ Programming
-Learning about Classes by making a database of media
+Learning about linked lists
 #endif
 
 using namespace std;
 
 class Node {
 	public:
-		Node(/*student*/); // constructor
+		Node(Student*); // paramitized constructor
 		~Node(); // deconstructor
-		Node* getNext() //get next Node pointer
-		
-		void getItems();
-		vector<Item*> roomitems; // item vector 
+		Node* getNext(); //get next Node pointer 
+		void setNext(Node*); //set the next pointer to the corresponding node pointer
+		Student* getStudent();//get student pointer
 	protected:
-		char name[50]; // name of room
+		Node* next;
+		Student* studentp;
 };
