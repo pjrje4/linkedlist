@@ -18,6 +18,6 @@ class Node {
 		void setNext(Node*); //set the next pointer to the corresponding node pointer
 		Student* getStudent();//get student pointer
 	protected:
-		Node* next;
-		Student* studentp;
+		Node* next; //next node
+		Student* studentp; // student in node
 };

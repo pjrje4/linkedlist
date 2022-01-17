@@ -12,48 +12,27 @@ Learning about linked lists
 using namespace std;
 
 int main() { //main
-	Node* first;
-	Node* last;
-	int index = 0;
-	while (true) { //loop
-		char input[20];
-		cout << "Enter a command (ADD, PRINT, QUIT): ";
-		cin.getline(input, 19); //user input
-		if (strcmp(input, "ADD") == 0) { //add student and node
-			Student* s = new Student();
-			Node* current = new Node(s);
-			if (index != 0) {
-				last->setNext(current);
-			}
-			else {
-				first = current;
-			}
-			last = current;
-			index++;
-		}
-		else if (strcmp(input, "PRINT") == 0) { //print nodes and students
-			cout << "printing" << endl;
-			if (index != 0) {
-				cout << "first not null" << endl;
-				Node* iter = first;
-				cout << "iter = first" << endl;
+	int index = 0; // index
+	Student* s1 = new Student(); // student 1 node
+	Node* first = new Node(s1);
+	index++;
 
-				if (true) {
-					cout << iter->getStudent()->getFirst() << " " << iter->getStudent()->getLast() << " " << iter->getStudent()->getID() << " " << iter->getStudent()->getGPA() << endl; // output student info
-					if (iter->getNext() != NULL) {
-						iter = iter->getNext();
-					}
-					else {
-						break;
-					}
-				}
-			}
-			else {
-				cout << "Please add nodes before printing." << endl;
-			}
-		}
-		else if (strcmp(input, "QUIT") == 0) { //quit program
-			return 0;
-        	}
-	}
+	Student* s2 = new Student(); // student 2 node
+        Node* second = new Node(s2);
+	first->setNext(second);
+	index++;
+
+        Student* s3 = new Student(); // student 3 node
+        Node* third = new Node(s3);
+	second->setNext(third);
+	index++;
+
+	Node* iter = first; // iterator
+	
+	cout << iter->getStudent()->getFirst() << " " << iter->getStudent()->getLast() << " " << iter->getStudent()->getID() << " " << iter->getStudent()->getGPA() << endl; // output student info
+	iter = iter->getNext(); // next 
+	cout << iter->getStudent()->getFirst() << " " << iter->getStudent()->getLast() << " " << iter->getStudent()->getID() << " " << iter->getStudent()->getGPA() << endl; // output student info
+        iter = iter->getNext(); // next
+	cout << iter->getStudent()->getFirst() << " " << iter->getStudent()->getLast() << " " << iter->getStudent()->getID() << " " << iter->getStudent()->getGPA() << endl; // output student info
+	return 0;
 }

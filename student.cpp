@@ -10,7 +10,7 @@ Learning about linked lists
 
 using namespace std;
 
-Student::Student() { // parametized constructor
+Student::Student() { // constructor
         cout << "Please enter the student's first name:  ";
 	cin >> this->firstName;
 	cout << "Please enter the student's last name:  ";
