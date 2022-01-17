@@ -13,6 +13,10 @@ class Student {
         public:
                 Student(); // constructor
 		~Student(); //deconstructor
+		char* getFirst();
+		char* getLast();
+		int getID();
+		float getGPA();
         protected:
         	char* firstName;
 		char* lastName;
